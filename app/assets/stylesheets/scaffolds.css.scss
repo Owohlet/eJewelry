@@ -1,6 +1,13 @@
+.navlink {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffffff;
+}
 body {
-  background-color: #fff;
-  color: #333;
+  background-image: url('shinygold.jpg');
+  // background-color: #fff;
+  color: #555;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
@@ -66,4 +73,25 @@ div {
     font-size: 12px;
     list-style: square;
   }
+}
+.navbar-default {
+  background-color: rgba(10,5,7,0.3);
+  border-color: #e7e7e7;
+}
+
+// nav li a {
+//   color: #ffffff;
+// }
+button{
+  background: rgba(10,5,7,0.3);
+  border: 0px;
+  padding: 5px 10px;
+  margin: 10px 10px;
+  outline: none;
+  color: #fff;
+  text-transform: uppercase;
+}
+.navbar-brand{
+  background-image: url('logo.png');
+  width: 122px
 }
