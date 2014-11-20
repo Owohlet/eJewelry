@@ -1,8 +1,58 @@
+.show_p{
+  
+  &:hover {
+    text-decoration: none;
+    background: #fff;
+    // color: #555;
+  }
+}
+.button-1 {
+  display: inline-block;
+  margin: 10px 0 0;
+  background: rgba(10, 5, 7, 0.3);
+  padding: 6px 8px;;
+  color: #555;
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-size: 12px;
+  border: none;
+
+
+  &:hover {
+    text-decoration: none;
+    background: #fff;
+    color: #555;
+  }
+}
+
 .navlink {
   color: #ffffff;
 }
+p{
+  padding: 6px;
+}
+.contain{
+  overflow: hidden;
+}
 .navbar-default .navbar-nav > li > a {
   color: #ffffff;
+}
+img {
+  vertical-align: middle;
+  height: 110px;
+  width: 170px;
+}
+.pro-list{
+ float: left;
+ margin: 5px;
+ border: 1px solid;
+ border-color: white;
+ border-radius: 5px;
+ background-color: rgba(0,0,1,0.2);
+}
+.pro-img{
+  width: 110px;
+  height: 90px;
 }
 body {
   background-image: url('shinygold.jpg');
@@ -93,5 +143,6 @@ button{
 }
 .navbar-brand{
   background-image: url('logo.png');
-  width: 122px
+  width: 122px;
+  height:48px
 }
