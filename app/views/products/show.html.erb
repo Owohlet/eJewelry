@@ -21,6 +21,12 @@
 
 
   <%= link_to 'Edit', edit_product_path(@product), :class =>'button-1'%>
-  |
+  &nbsp &nbsp
   <%= link_to 'Back', products_path, :class =>'button-1' %>
 </div>
+
+<% @comments.where(:product_id => @product.id).each do |c| %>
+<%= c.comment %>
+<%end%>
+
+<%= render comment_show_comment_path %>

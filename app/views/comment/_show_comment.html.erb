@@ -1,0 +1,30 @@
+<!-- #f6f7f8 -->
+<!-- #edeff4 -->
+
+<br>
+<br>
+<br>
+<br>
+
+<h2>Leave a comment</h2>
+<hr>
+
+<!-- Styling found in scaffold.css.scss-->
+<div class = "allcom">
+  <%= form_for :comment, {:controller => 'comments', :action => 'create'} do |f| %>
+
+
+
+  <div class="form-group">
+    <%= f.label :comment %><br>
+    <%= f.text_area :comment,:class => "form-control" %>
+
+    <%= @product.id %>
+  </div>
+
+
+
+  <%= f.submit "Submit", :class => 'btn btn-primary block btn-sm' %>
+  <% end %>
+
+</div>

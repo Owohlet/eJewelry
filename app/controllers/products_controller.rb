@@ -10,11 +10,16 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    @products = Product.find(params[:id])
+    @comments = Comment.all
   end
 
+  
+  
   # GET /products/new
   def new
     @product = Product.new
+    @comment = Comment.new
   end
 
   # GET /products/1/edit
@@ -35,6 +40,11 @@ class ProductsController < ApplicationController
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
+
+    # for the comment
+    @product = Product.find(params[:product_id])
+    @comment = @product.comments.create(comment_params)
+    redirect_to product_path(@product)
   end
 
   # PATCH/PUT /products/1
@@ -74,5 +84,8 @@ class ProductsController < ApplicationController
       params.require(:product).permit(:name, :description, :price, :image)
     end
 
+    def comment_params
+      params.require(:comment).permit(:comment,:product_id)
+    end
     
   end
