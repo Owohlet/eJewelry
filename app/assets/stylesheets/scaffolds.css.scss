@@ -1,8 +1,28 @@
 .allcom{
-  background-color: #f6f7f8
+  background-color: #edeff4;
+  border: solid 1px white;
+  height: 50px;
+  margin: 3px;
+  border-radius: 4px;
+  padding: 15px;
+  color: olive;
+}
+.comm_container{
+  background-color: #f6f7f8;
+  border-radius: 2.5px;
+  padding: 1px;
+}
+
+.alphacomm{
+  background-color: rgba(150,140,57,0.5);
+  padding: 3px;
+}
+.newcom{
+  background-color: #f6f7f8;
+  padding: 3px;
 }
 .show_p{
-  
+
   &:hover {
     text-decoration: none;
     background: #fff;
@@ -148,4 +168,21 @@ button{
   background-image: url('logo.png');
   width: 122px;
   height:48px
+}
+
+hr {
+  margin-top: 0px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #eeeeee;
+}
+
+label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  // font-weight: bold;
+  font-size: 20px;
+  padding: 5px;
+  color:#555
 }
