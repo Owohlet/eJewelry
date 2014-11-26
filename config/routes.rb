@@ -1,12 +1,18 @@
 Rails.application.routes.draw do
-  get 'comment/show_comment'
+  resources :shops do
+    resources :products do
+      resources :comments
+    end
+  end
+
+  #get 'comment/show_comment'
 
   get 'welcome/index'
 
-  resources :products
+  
 
 
-  post 'products/:id' => 'comment#create'
+  # post 'products/:id' => 'comment#create'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

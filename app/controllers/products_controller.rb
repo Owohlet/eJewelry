@@ -4,47 +4,54 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
+    # @product = Product.find(1)
+
     @products = Product.all
+    @shops = Shop.all
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
-    @products = Product.find(params[:id])
-    @comments = Comment.all
+    @shop = Shop.find(params[:shop_id])
+    @product = @shop.products.find(params[:id])
+    @comments = @product.comments.all
+    @comment = @product.comments.build
   end
 
   
-  
+  #@card = Card.new(list_id: params[:list])
   # GET /products/new
+  # @shop = Shop.find(params[:shop_id])
+  # @product = @shop.product.new(product_params)
   def new
-    @product = Product.new
-    @comment = Comment.new
+    @shop = Shop.find(params[:shop_id])
+    @product = @shop.products.new
   end
 
   # GET /products/1/edit
   def edit
-  end
+   @shop = Shop.find(params[:shop_id])
+   @product = @shop.products.find(params[:id])
+
+ end
 
   # POST /products
   # POST /products.json
   def create
-    @product = Product.new(product_params)
+    @shop = Shop.find(params[:shop_id])
+    @product = @shop.products.new(product_params)
+
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
+        format.html { redirect_to shop_product_path(@shop, @product), notice: 'Product was successfully created.' }
         format.json { render :show, status: :created, location: @product }
       else
         format.html { render :new }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
-
-    # for the comment
-    @product = Product.find(params[:product_id])
-    @comment = @product.comments.create(comment_params)
-    redirect_to product_path(@product)
   end
 
   # PATCH/PUT /products/1
@@ -64,9 +71,11 @@ class ProductsController < ApplicationController
   # DELETE /products/1
   # DELETE /products/1.json
   def destroy
+    @shop = Shop.find(params[:shop_id])
+    @product = @shop.product.find(params[:id])
     @product.destroy
     respond_to do |format|
-      format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
+      format.html { redirect_to shop_products_path(@shop,@product), notice: 'Product was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -81,11 +90,11 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :description, :price, :image)
+      params.require(:product).permit(:name, :description, :price, :image, :shop_id)
     end
 
     def comment_params
-      params.require(:comment).permit(:comment,:product_id)
+      params.require(:comment).permit(:comment,:product_id,:shop_id)
     end
     
   end

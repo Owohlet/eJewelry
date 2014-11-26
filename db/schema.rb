@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141121134308) do
+ActiveRecord::Schema.define(version: 20141123184929) do
 
   create_table "comments", force: true do |t|
     t.text     "comment"
@@ -32,6 +32,16 @@ ActiveRecord::Schema.define(version: 20141121134308) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image"
+    t.integer  "shop_id"
+  end
+
+  add_index "products", ["shop_id"], name: "index_products_on_shop_id"
+
+  create_table "shops", force: true do |t|
+    t.string   "name"
+    t.text     "location"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

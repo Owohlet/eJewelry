@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @product, :class =>'button-1' %>
-<%= link_to 'Back', products_path, :class =>'button-1' %>
+<%= link_to 'Show', shop_product_path(@shop, @product), :class =>'button-1' %>
+<%= link_to 'Back', shop_path(@shop), :class =>'button-1' %>

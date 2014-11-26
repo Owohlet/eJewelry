@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+<h1><%= @shop.name %></h1>
+<p><%= @shop.location %></p>
+<hr>
+
+
+<div class="contain">
+
+  <% @products.each do |product| %>
+
+  <!-- link to product starts here -->
+  <%= link_to shop_product_path(@shop, product), :class => 'show_p' do %>
+  
+  <!-- containing div for each prouct -->
+  <div class = "pro-list">
+    <%= image_tag product.image_url  :class=>"pro-img"%>
+    <p><%= product.name %></p>
+
+    <!-- <p><%= product.description %></p> -->
+    <p>GHC<%= product.price %></p>
+    <%end%>
+    <%= link_to 'Edit', edit_shop_product_path(@shop,product), :class =>'button-1'%>
+    &nbsp &nbsp &nbsp 
+    <%= link_to 'Remove', shop_product_path(@shop,product),:class =>'button-1', method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+  <%end%>
+</div>
+
+<br>
+<%= link_to 'Add Product', new_shop_product_path(@shop), :class =>'button-1' %>
+<br>
+<hr>
+<%= link_to 'Edit', edit_shop_path(@shop) , :class =>'button-1'%> &nbsp &nbsp
+<%= link_to 'Back', shops_path , :class =>'button-1'%>
+
