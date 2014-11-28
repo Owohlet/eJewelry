@@ -49,8 +49,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
      </div>
      <div class="menu">
       <ul class="menu-top">
-        <li><a class="play-icon popup-with-zoom-anim" href="#small-dialog">Log In</a></li>
-        <li><a class="play-icon popup-with-zoom-anim" href="#small-dialog1">Sign up</a></li>
+        <!-- <li><a class="play-icon popup-with-zoom-anim" href="#small-dialog">Log In</a></li>  -->
+      <li><%= link_to 'Log In', new_user_session_path, :class =>'play-icon popup-with-zoom-anim' %></li>
+        <!-- <li><a class="play-icon popup-with-zoom-anim" href="#small-dialog1">Sign up</a></li> -->
+        <li><%= link_to 'Sign up', new_user_registration_path, :class =>'play-icon popup-with-zoom-anim' %></li>
         <li><div class="main">
           <section>
             <button id="showRight" class="navig"></button>

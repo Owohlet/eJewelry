@@ -1,9 +1,12 @@
 class CommentsController < ApplicationController
 
+
   def show
 
     @comments = Comment.find(:product_id => params[:id])
   end
+
+  before_action :authenticate_user!
 
   def new
     @comment = Comment.new
