@@ -102,14 +102,14 @@ pre {
 }
 
 a {
-  color: #000;
-  &:visited {
-    color: #666;
-  }
-  &:hover {
-    color: #fff;
+  color: #fff;
+  
+  a:hover {
+    color: #0ed58e;
     background-color: #000;
+    text-decoration: none;
   }
+  
 }
 
 div {

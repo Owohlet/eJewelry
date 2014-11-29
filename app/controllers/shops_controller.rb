@@ -6,7 +6,14 @@ class ShopsController < ApplicationController
   # GET /shops
   # GET /shops.json
   def index
-    @shops = Shop.all
+    if session["warden.user.user.key"]
+      @user_id = session["warden.user.user.key"][0][0]
+      @user = User.find(@user_id)
+      @shops = @user.shops
+    else
+      redirect_to  home_index_path
+    end
+    #@shops = Shop.all
   end
 
   # GET /shops/1
@@ -32,7 +39,7 @@ class ShopsController < ApplicationController
   # POST /shops.json
   def create
     @shop = Shop.new(shop_params)
-
+    @shop.user_id = session["warden.user.user.key"][0][0]
     respond_to do |format|
       if @shop.save
         format.html { redirect_to @shop, notice: 'Shop was successfully created.' }

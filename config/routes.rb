@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'home/index'
+
+  get 'dashboard/corner'
+
   devise_for :users
   resources :shops do
     resources :products do

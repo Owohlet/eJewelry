@@ -40,46 +40,48 @@
 
       <div class="navbar navbar-default navbar-static-top">
         <div class="container">
-         <div class="row">
-          <div class="col-md-6 col-md-offset-3">
-            <!-- <h1>Expandable Search Form</h1> -->
-          </div>
-        </div>
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-
-        <a class="navbar-brand" href="#"></a>
-        <div class="navbar-collapse collapse navbar-responsive-collapse">
-          <ul class="nav navbar-nav">
-            <li><%= link_to "Link1", "/path1" , :id => "navlink" %></li>
-            <li><%= link_to "Link2", "/path2"  %></li>
-            <li><%= link_to "Link3", "/path3"  %></li>
-          </ul>
+          <%= link_to 'Logout',  destroy_user_session_path, method: 'delete', :class => 'logout' %>
           <div class="row">
-            <div class="col-md-4 col-md-offset-3">
-              <form action="" class="search-form">
-                <div class="form-group has-feedback">
-                  <label for="search" class="sr-only">Search</label>
-                  <input type="text" class="form-control" name="search" id="search" placeholder="search">
-                  <span class="glyphicon glyphicon-search form-control-feedback"></span>
-                </div>
-              </form>
+            <div class="col-md-6 col-md-offset-3">
+              <!-- <h1>Expandable Search Form</h1> -->
+            </div>
+          </div>
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <a class="navbar-brand" href="#"></a>
+          <div class="navbar-collapse collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav">
+              <li><%= link_to "Link1", "/path1" , :id => "navlink" %></li>
+              <li><%= link_to "Link2", "/path2"  %></li>
+              <li><%= link_to "Link3", "/path3"  %></li>
+            </ul>
+            <div class="row">
+              <div class="col-md-4 col-md-offset-3">
+                <form action="" class="search-form">
+                  <div class="form-group has-feedback">
+                    <label for="search" class="sr-only">Search</label>
+                    <input type="text" class="form-control" name="search" id="search" placeholder="search">
+                    <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                  </div>
+                </form>
+              </div>
+
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-9">
-          <%= bootstrap_flash %>
-          <%= yield %>
-        </div>
-        <!-- <div class= "col-lg-4"></div> -->
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-9">
+            <%= bootstrap_flash %>
+            <%= yield %>
+          </div>
+          <!-- <div class= "col-lg-4"></div> -->
           <!-- <div class="col-lg-3">
             <div class="well sidebar-nav">
               <h3>Sidebar</h3>
@@ -91,13 +93,19 @@
               </ul>
             </div><!--/.well -->
           </div><!--/span--> 
+
         </div><!--/row-->
 
-        <footer>
-          <p>&copy; eJewelry 2014</p>
-        </footer>
 
       </div> <!-- /container -->
-
+      <div class="footer">
+        
+        <div class="footer-top">
+         <!--  <a href="index.html"><img src="<%= asset_path('llogo.png')%>"/></a> -->
+        </div>
+        <p class="footer-head">&copy 2014 eJewelry </p>
+        <div class="clearfix"></div>
+        
+      </div>
     </body>
     </html>

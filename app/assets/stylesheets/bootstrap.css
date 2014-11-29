@@ -50,6 +50,12 @@ body {
   outline: none;
   color: #fff;
   text-transform: uppercase;
+  
+  &:hover {
+    text-decoration: none;
+    background: #fff;
+    // color: #555;
+  }
 }
 article,
 aside,

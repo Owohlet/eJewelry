@@ -10,11 +10,27 @@ ul, ol {margin: 0;}
 p {margin: 0;}
 
 body{
+	height: 100%
 	font-family: 'Open Sans', sans-serif;
 	background-image: url('/assets/shinygold.jpg');
 }
 html,body input[type="text"],body input[type="password"]{
 	outline:none;
+}
+.button{
+	background: #a63d56;
+	border: 0px;
+	padding: 5px 10px;
+	margin: 10px 10px;
+	outline: none;
+	color: #fff;
+	text-transform: uppercase;
+
+	&:hover {
+		text-decoration: none;
+		background: #fff;
+		// color: #555;
+	}
 }
 .overlay{
 	width: 100%;
@@ -542,7 +558,7 @@ ul.numbers li{
 /*--- Portfolio Ends Here ----*/
 /*--- Footer Part Starts Here ---*/
 .footer{
-	background:#f7f7f7;
+	background: transparent;
 	padding:10px 0;
 }
 .footer-top a{

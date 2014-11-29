@@ -50,7 +50,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
      <div class="menu">
       <ul class="menu-top">
         <!-- <li><a class="play-icon popup-with-zoom-anim" href="#small-dialog">Log In</a></li>  -->
-      <li><%= link_to 'Log In', new_user_session_path, :class =>'play-icon popup-with-zoom-anim' %></li>
+        <li><%= link_to 'Log In', new_user_session_path, :class =>'play-icon popup-with-zoom-anim' %></li>
         <!-- <li><a class="play-icon popup-with-zoom-anim" href="#small-dialog1">Sign up</a></li> -->
         <li><%= link_to 'Sign up', new_user_registration_path, :class =>'play-icon popup-with-zoom-anim' %></li>
         <li><div class="main">
@@ -150,7 +150,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <div class="header-bottom">
       <p>Find your favorite</p>
       <h1>JEWELRY & BEADS</h1>
-      <a href="#">Take a Quick Market Tour</a>
+      
+      <%= link_to 'Tour the Market', home_index_path %>
       <!-- <p class="reward">OR SEND US YOUR OWN RECIPES AND <u>GET REWARDED!</u></p> -->
     </div>
   </div>

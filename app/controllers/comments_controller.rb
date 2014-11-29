@@ -6,9 +6,9 @@ class CommentsController < ApplicationController
     @comments = Comment.find(:product_id => params[:id])
   end
 
-  before_action :authenticate_user!
 
   def new
+    before_action :authenticate_user!
     @comment = Comment.new
   end
 
