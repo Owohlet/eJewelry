@@ -1,24 +1,37 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p> -->
+<div class ="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-6">
+        <%= image_tag @product.image_url, :class=>"showimage" %>
+        <div class="table-responsive">
+          <div class="table">
+            <tbody>
+              <tr>
+                <td><h2><%= @product.name %></h2></td>
+
+              </tr>
+              <br>
+              <tr>
+
+                <td><%= @product.description %></td>
+              </tr>
+              <br>
+              <tr>
+                <td><strong>Price:</strong</td>
+                <td>GHC <%= @product.price %></td>
+              </tr>
+            </tbody>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <div>
-  <p>
-    <!-- <strong>Photo:</strong> -->
-    <%= image_tag @product.image_url %>
-  </p>
-  <p>
-    <strong>Name:</strong>
-    <%= @product.name %>
-  </p>
 
-  <p>
-    <strong>Description:</strong>
-    <%= @product.description %>
-  </p>
 
-  <p>
-    <strong>Price:</strong>
-    GHC <%= @product.price %>
-  </p>
-  
 
 
   <%= link_to 'Edit', edit_shop_product_path(@shop, @product), :class =>'button-1'%>

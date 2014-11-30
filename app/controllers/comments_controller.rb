@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!, except: [:show, :new]
 
 
   def show
@@ -8,7 +9,6 @@ class CommentsController < ApplicationController
 
 
   def new
-    before_action :authenticate_user!
     @comment = Comment.new
   end
 

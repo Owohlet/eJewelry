@@ -8,4 +8,9 @@ class WelcomeController < ApplicationController
     end
   end
 
+  def product
+    render json: Product.all.pluck(:name)
+  end
+
+
 end

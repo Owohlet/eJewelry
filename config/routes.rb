@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'home/index'
-
+  # get 'welcome#product'
   get 'dashboard/corner'
 
   devise_for :users
@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   #get 'comment/show_comment'
 
   get 'welcome/index'
+  get '/products' => 'welcome#product'
+  post '/products' => 'search#search'
 
   
 

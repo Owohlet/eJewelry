@@ -1,6 +1,9 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
-
+.showimage{
+  height: 400px;
+  width: 400px;
+}
 .allcom{
   background-color: #edeff4;
   border: solid 1px white;
@@ -103,7 +106,7 @@ pre {
 
 a {
   color: #fff;
-  
+
   a:hover {
     color: #0ed58e;
     background-color: #000;
