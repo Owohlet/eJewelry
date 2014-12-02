@@ -4,28 +4,37 @@
     <div class="row">
       <div class="col-md-6">
         <%= image_tag @product.image_url, :class=>"showimage" %>
-        <div class="table-responsive">
-          <div class="table">
-            <tbody>
-              <tr>
-                <td><h2><%= @product.name %></h2></td>
-
-              </tr>
-              <br>
-              <tr>
-
-                <td><%= @product.description %></td>
-              </tr>
-              <br>
-              <tr>
-                <td><strong>Price:</strong</td>
-                <td>GHC <%= @product.price %></td>
-              </tr>
-            </tbody>
-          </div>
-
-        </div>
       </div>
+      <div class="table-responsive col-md-6">
+        <div class="table">
+          <tbody>
+            <tr>
+              <td><h2><%= @product.name %></h2></td>
+
+            </tr>
+            <br>
+            <tr>
+
+              <td><%= @product.description %></td>
+            </tr>
+            <br>
+            <tr>
+              <td><strong>Price:</strong</td>
+              <td>GHC <%= @product.price %></td>
+            </tr>
+            <br>
+            <br>
+            <br>
+            <br><br><br><br><br><br><br><br><br>
+            <tr>
+              <td>Overall Rating</td>
+              <td><div class="star-rating" data-score= <%= @ave_rating %> ></div></td>
+            </tr>
+          </tbody>
+        </div>
+
+      </div>
+      
     </div>
   </div>
 </div>
@@ -44,9 +53,23 @@
 <div class="alphacomm">
   <div class = "comm_container">
     <% @comments.each do |c| %>
-    <div class="allcom"><%= c.comment %></div>
+    <div class="allcom">
+      <%= c.comment %>
+      <div class="star-rating rate" data-score= <%= c.rating %> ></div>
+    </div>
+
     <%end%>
   </div>
 
   <%= render 'show_comment' %>
 </div>
+
+<script>
+  $(".star-rating").raty({
+    path: '/assets',
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    }
+  });
+</script>

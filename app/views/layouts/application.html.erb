@@ -60,30 +60,30 @@
           <a class="navbar-brand" href="#"></a>
           <div class="navbar-collapse collapse navbar-responsive-collapse">
             <ul class="nav navbar-nav">
-              <li><%= link_to "Link1", "/path1" , :id => "navlink" %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
+              <li><%= link_to "Home", home_index_path , :id => "navlink" %></li>
+              <li><%= link_to "My Corner", dashboard_corner_path  %></li>
+              <li><%= link_to "My Shops", shops_path  %></li>
             </ul>
             <div class="row">
               <div class="col-md-4 col-md-offset-3">
                 <form action="/products" class="search-form" method="post">
                   <div class="form-group has-feedback">
-<!-- start search
--->
-<div class="ui-widget">
-  <label for="search" class="sr-only">Search</label>
-  <input type="text" class="form-control" name="search" id="search" placeholder="search">
-</div>
-<!-- end search -->
+              <!-- start search
+            -->
+            <div class="ui-widget">
+              <label for="search" class="sr-only">Search</label>
+              <input type="text" class="form-control" name="search" id="search" placeholder="search">
+            </div>
+            <!-- end search -->
 
 
-<span class="glyphicon glyphicon-search form-control-feedback"></span>
-</div>
-</form>
-</div>
+            <span class="glyphicon glyphicon-search form-control-feedback"></span>
+          </div>
+        </form>
+      </div>
 
-</div>
-</div>
+    </div>
+  </div>
 </div>
 </div>
 
@@ -150,7 +150,7 @@
             $.ajax({
               url: "/products",
               dataType: "json",
-              
+
               type: "POST",
               data: { search : selected,
                 'csrf-token': $('meta[name="csrf-token"]').attr('content'),

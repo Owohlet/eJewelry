@@ -17,9 +17,14 @@ class ProductsController < ApplicationController
     @product = @shop.products.find(params[:id])
     @comments = @product.comments.all
     @comment = @product.comments.build
-  end
 
-  
+
+    if @comments.any?
+      @ave_rating = @comments.average(:rating).round(2)
+    else
+      @ave_rating = 0
+    end
+  end
   #@card = Card.new(list_id: params[:list])
   # GET /products/new
   # @shop = Shop.find(params[:shop_id])

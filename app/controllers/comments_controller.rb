@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
   def show
 
     @comments = Comment.find(:product_id => params[:id])
+    
   end
 
 
@@ -21,6 +22,6 @@ class CommentsController < ApplicationController
 
   private
   def comment_params
-    params.require(:comment).permit(:comment,:product_id)
+    params.require(:comment).permit(:comment,:product_id, :rating)
   end
 end

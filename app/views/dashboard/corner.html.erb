@@ -1,4 +1,61 @@
-<h1>Dashboard#corner</h1>
-<p>Welcome to your corner</p>
+<h1>Welcome to your corner</h1>
+<hr>
+<br>
+<br>
+<br>
+<div class="float col-md-12">
+  <table>
+    <tr >
+      <div class="contain">
+        <h3>Best Rated Products</h3>
+        <%@comments.each do |pro| %> 
+        <%= link_to shop_product_path(shop_id: pro.product.shop.id, id: pro.product.id), :class => 'show_p' do %>
+        <div class = "pp pro-list">
+          <%= image_tag pro.product.image_url, :class=>"pro-img" %>
+          <p><%= pro.product.name %></p>
 
-<%= link_to 'View my shops',  shops_path %>
+          <p>GHC<%= pro.product.price %></p>
+        </div>
+        <%end%>
+        <%end%>
+      </div>
+    </tr>
+    <hr>
+    <tr>
+      <br>  <br>
+      <div class="contain">
+        <h3>Most talked about Products</h3>
+        <%@sayproduct.first(5).map do |compro|%>
+        <%= link_to shop_product_path(shop_id: compro.shop.id, id: compro.id), :class => 'show_p' do %>
+        <div class = "pp pro-list">
+          <%= image_tag compro.image_url, :class=>"pro-img" %>
+          <p><%= compro.name %></p>
+
+          <p>GHC<%= compro.price %></p>
+        </div>
+        <%end%>
+        <%end%>
+      </div>
+    </tr>
+    <hr>
+    <tr>
+      <br>  <br>
+      <div class="contain">
+
+        <h3>New stuff</h3>
+        <%@new_products.each do |compro|%>
+        <%= link_to shop_product_path(shop_id: compro.shop.id, id: compro.id), :class => 'show_p' do %>
+        <div class = "pp pro-list">
+          <%= image_tag compro.image_url, :class=>"pro-img" %>
+          <p><%= compro.name %></p>
+
+          <p>GHC<%= compro.price %></p>
+        </div>
+        <%end%>
+        <%end%>
+      </div>
+    </tr>
+
+  </table>
+</div>
+<%= link_to 'View my shops',  shops_path, :class=>"button-1"%>
